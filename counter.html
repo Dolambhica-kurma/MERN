@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter APP</title>
+     <style>
+      .container {
+        background-color: aqua;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100vh;
+      }
+      .counter {
+        border: 5px solid gray;
+        padding: 20px;
+        color: white;
+        background-color: blueviolet;
+        border-radius: 10%;
+      }
+       span {
+        font-size: 4rem;
+        font-weight: 700;
+      }
+      .buttonsDiv {
+        margin: 15px;
+      }
+      button {
+        color: white;
+        padding: 5px;
+        font-weight: 700;
+      }
+      #subtract {
+        background-color: red;
+      }
+      #reset {
+        background-color: white;
+        color:black;
+      }
+      #add {
+        background-color: greenyellow;
+      } 
+    </style> 
+  </head>
+  <body>
+    <div class="container">
+      <div class="counter">
+        <h1>Counter APP</h1>
+        <span id="counterValue">0</span>
+        <hr />
+        <div class="buttonsDiv">
+          <button id="subtract">Subtract</button>
+          <button id="reset">Reset</button>
+          <button id="add">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+         const display = document.getElementById("counterValue");
+         const addbtn = document.getElementById("add");
+         const subtractbtn = document.getElementById("subtract");
+         const resetbtn = document.getElementById("reset");
+         let counter = 0;
+        function updateDisplay() {
+         display.textContent = counter;
+         }
+        subtractbtn.addEventListener("click", () => {
+        counter--;
+        updateDisplay();
+        });
+        resetbtn.addEventListener("click", () => {
+        counter = 0;
+        updateDisplay();
+        });
+        addbtn.addEventListener("click", () => {
+        counter++;
+        updateDisplay();
+        });
+    </script>
+  </body>
+</html>
